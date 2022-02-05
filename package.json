@@ -12,5 +12,8 @@
 	"bin": {
 		"create-stratify-project": "./create-stratify-project/index.js",
 		"stratify": "./scripts/index.js"
+	},
+	"dependencies": {
+		"marked": "^4.0.12"
 	}
 }
