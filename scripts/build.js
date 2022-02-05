@@ -39,12 +39,8 @@ function buildPages() {
 		console.log("Moving static assets to build directory");
 		if (dirExists(publicFolder)) {
 			// For all static assets
-			const staticAssets = fs.readdirSync(publicFolder);
-			for (let assetFile of staticAssets)
-				fs.copyFileSync(
-					`${publicFolder}/${assetFile}`,
-					`${buildFolder}/${assetFile}`
-				);
+			const copyAllFolderContents = require("../helpers/copyAllFolderContents");
+			copyAllFolderContents(publicFolder, buildFolder);
 		}
 	}
 

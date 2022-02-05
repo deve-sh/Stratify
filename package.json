@@ -14,6 +14,7 @@
 		"stratify": "./scripts/index.js"
 	},
 	"dependencies": {
+		"fs-extra": "^10.0.0",
 		"marked": "^4.0.12"
 	}
 }
