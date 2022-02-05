@@ -1,5 +1,4 @@
 const readPagesDirectory = () => {
-	const fs = require("fs");
 	const path = require("path");
 
 	const readDirectory = require("./readDirectory");
