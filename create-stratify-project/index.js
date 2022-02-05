@@ -39,10 +39,10 @@ const filesToGenerate = [
 	{
 		name: "pages/index.md",
 		requiresFolder: "pages",
-		content: `# This is a Sample Page
+		content: ({ appName }) => `# This is a Sample Page
 
 <!--
-Title: Page Title
+Title: ${appName}
 -->
 
 Populate this with content, run \`npm run dev\` to see this page change live.
