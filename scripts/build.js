@@ -26,7 +26,7 @@ function buildPages() {
 				.split(".md")[0] // Remove the .md extension;
 				.replace("\\", "/"); // Remove opposite slashes from the path
 
-			console.log("Building page: ", pageName.replace("\\", "/"));
+			console.log("Building page: ", pageName);
 			const markdownContent = fs.readFileSync(fileName, "utf-8");
 			const convertedHTML = parseMarkdown(markdownContent);
 
