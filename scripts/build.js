@@ -16,9 +16,7 @@ function buildPages() {
 	fs.mkdirSync(buildFolder);
 
 	if (markdownFiles.length) {
-		const {
-			marked: { parse: parseMarkdown },
-		} = require("marked");
+		const parseMarkdown = require("../helpers/parseMarkdown");
 
 		for (let { fileName, directory } of markdownFiles) {
 			const pageName = fileName
@@ -28,7 +26,8 @@ function buildPages() {
 
 			console.log("Building page: ", pageName);
 			const markdownContent = fs.readFileSync(fileName, "utf-8");
-			const convertedHTML = parseMarkdown(markdownContent);
+			const { html: convertedHTML, title = "" } =
+				parseMarkdown(markdownContent);
 
 			if (directory)
 				fs.mkdirSync(`${buildFolder}${directory}`, { recursive: true });
@@ -39,7 +38,9 @@ function buildPages() {
 				fs.writeFileSync(
 					`${buildFolder}/${pageName}.html`,
 					// Replace the  {{ content }} block with the converted markdown HTML
-					template.replace("{{ content }}", convertedHTML)
+					template
+						.replace("{{ content }}", convertedHTML)
+						.replace("{{ title }}", title)
 				);
 			else fs.writeFileSync(`${buildFolder}/${pageName}.html`, convertedHTML);
 		}
