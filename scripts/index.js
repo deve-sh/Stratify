@@ -15,4 +15,6 @@ if (commandType === "dev") {
 	build();
 } else if (commandType === "start") {
 	// Check if there is a build folder, if yes, use the 'serve' package to serve it's content on a local server.
+	const start = require("./start");
+	start();
 }
