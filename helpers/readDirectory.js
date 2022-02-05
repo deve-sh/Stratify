@@ -1,12 +1,18 @@
 // Reads directory recursively
 const readDirectory = (dirPath, arrayOfFiles) => {
+	const fs = require("fs");
+	const path = require("path");
+
 	const files = fs.readdirSync(dirPath);
-	let arrayOfFiles = arrayOfFiles || [];
+	arrayOfFiles = arrayOfFiles || [];
 
 	files.forEach((file) => {
-		const filePath = filePath;
+		const filePath = dirPath + "/" + file;
 		if (fs.statSync(filePath).isDirectory())
-			arrayOfFiles = readDirectory(filePath, arrayOfFiles);
+			arrayOfFiles = readDirectory(
+				path.resolve(process.cwd(), filePath),
+				arrayOfFiles
+			);
 		else arrayOfFiles.push(filePath);
 	});
 
