@@ -42,15 +42,30 @@ const filesToGenerate = [
 		content: `# This is a Sample Page
 
 Populate this with content, run \`npm run dev\` to see this page change live.
-		
+
 Once you're done with working on the files, run \`npm run build\` to compile the entire directory to static HTML Files.
-		
+
 Run \`npm run start\` to serve the built output.`,
 	},
 	{
 		name: "public/staticasset.md",
 		requiresFolder: "public",
 		content: `Keep your static assets like images, robots.txt, videos etc in this folder.`,
+	},
+	{
+		name: "templates/index.html",
+		requiresFolder: "templates",
+		content: ({ appName }) => `<html>
+	<head>
+		<title>${appName}</title>
+	</head>
+	<body>
+		<!-- This serves as a template for your file, 
+			add stylesheets, scripts or any other properties that you need common in your pages. 
+		-->
+		{{ content }}
+	</body>
+</html>`,
 	},
 ];
 
