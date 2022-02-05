@@ -13,8 +13,6 @@ function buildPages() {
 	if (dirExists(buildFolder)) fs.rmSync(buildFolder, { recursive: true });
 	fs.mkdirSync(buildFolder);
 
-	console.log(markdownFiles);
-
 	if (markdownFiles.length) {
 		const {
 			marked: { parse: parseMarkdown },
