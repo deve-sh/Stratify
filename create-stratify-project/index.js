@@ -8,8 +8,8 @@ function generateError(errorMessage) {
 	return process.exit(1);
 }
 
-const packageJSONContent = (appName) => `{
-	"name": "${appName}",
+const packageJSONContent = (appName = "") => `{
+	"name": "${appName.replace(/\s/g, "_").toLowerCase()}",
 	"version": "1.0.0",
 	"description": "A simple tool to build out a static website using nothing but Markdown.",
 	"main": "index.js",
