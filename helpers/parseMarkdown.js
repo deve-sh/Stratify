@@ -9,7 +9,7 @@ const parseMarkdown = (markdown) => {
 
 	const comments = findCommentsInMarkdown(markdown);
 
-	const pageTitleFromMarkdown = "";
+	let pageTitleFromMarkdown = "";
 	for (let comment of comments) {
 		if (comment.includes("Title: "))
 			pageTitleFromMarkdown = comment.split("Title: ")[1];

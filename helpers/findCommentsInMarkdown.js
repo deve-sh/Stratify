@@ -3,7 +3,7 @@ const findCommentsInMarkdown = (markdown = "") => {
 	const commentMatches = markdown.match(regex);
 	if (commentMatches)
 		return commentMatches.map((match) =>
-			match.replace("<!--\n", "").replace("\n-->", "").split(":")
+			match.replace("<!--\n", "").replace("\n-->", "")
 		);
 	else return null;
 };
