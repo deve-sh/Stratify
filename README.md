@@ -89,3 +89,10 @@ The dev server has hot reloading enabled for development ease. Run the following
 ```bash
 stratify dev
 ```
+
+### Contribution & Issues
+
+[Raise an issue](https://github.com/deve-sh/stratify/issues/new)
+[Create a Pull Request](https://github.com/deve-sh/stratify/compare)
+
+Contributions and feedback is welcome, this is a weekend project built out of curiousity, any good changes will be merged.
