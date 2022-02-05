@@ -13,15 +13,20 @@ function buildPages() {
 	if (dirExists(buildFolder)) fs.rmSync(buildFolder, { recursive: true });
 	fs.mkdirSync(buildFolder);
 
+	console.log(markdownFiles);
+
 	if (markdownFiles.length) {
 		const {
 			marked: { parse: parseMarkdown },
 		} = require("marked");
 
-		for (let fileName of markdownFiles) {
+		for (let { fileName, directory } of markdownFiles) {
 			console.log("Building page: ", fileName);
 			const markdownContent = fs.readFileSync(fileName, "utf-8");
 			const convertedHTML = parseMarkdown(markdownContent);
+
+			if (directory)
+				fs.mkdirSync(`${buildFolder}${directory}`, { recursive: true });
 
 			fs.writeFileSync(
 				`${buildFolder}/${
