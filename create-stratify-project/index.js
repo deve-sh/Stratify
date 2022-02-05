@@ -47,6 +47,11 @@ Once you're done with working on the files, run \`npm run build\` to compile the
 		
 Run \`npm run start\` to serve the built output.`,
 	},
+	{
+		name: "public/staticasset.md",
+		requiresFolder: "public",
+		content: `Keep your static assets like images, robots.txt, videos etc in this folder.`,
+	},
 ];
 
 function generateStratifyProject() {
