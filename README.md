@@ -42,7 +42,7 @@ There will be inevitably times when you want to add new stylesheets to the proje
 
 If you have a page `post-1.md`, you can create a `templates/post-1.html` file and it will be picked up, if a matching template name is not found, the builder defaults to the `templates/index.html` file. If no templates are found, the html output generated is a simple conversion of the markdown to HTML.
 
-An example of a template is: `{{ title }}` and `{{ content }}` are dynamically replaced with the title and content of the page at build time, support for more dynamic fields coming soon.
+An example of a template is:
 
 ```html
 <html>
@@ -59,6 +59,8 @@ An example of a template is: `{{ title }}` and `{{ content }}` are dynamically r
 	</body>
 </html>
 ```
+
+`{{ title }}` and `{{ content }}` are dynamically replaced with the title and content of the page at build time, support for more dynamic fields coming soon.
 
 ### Static Assets
 
@@ -93,6 +95,7 @@ stratify dev
 ### Contribution & Issues
 
 [Raise an issue](https://github.com/deve-sh/stratify/issues/new)
+
 [Create a Pull Request](https://github.com/deve-sh/stratify/compare)
 
 Contributions and feedback is welcome, this is a weekend project built out of curiousity, any good changes will be merged.
