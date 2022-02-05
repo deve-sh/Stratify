@@ -1,0 +1,16 @@
+{
+	"name": "stratify-web",
+	"version": "1.0.0",
+	"description": "A simple tool to build out a static website using nothing but Markdown.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bin": {
+		"create-stratify-project": "./create-stratify-project/index.js",
+		"stratify": "./scripts/index.js"
+	}
+}
