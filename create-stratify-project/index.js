@@ -41,7 +41,13 @@ const filesToGenerate = [
 		requiresFolder: "pages",
 		content: `# This is a Sample Page
 
+<!--
+Title: Page Title
+-->
+
 Populate this with content, run \`npm run dev\` to see this page change live.
+
+To change the title of the page, just use the comment block in the source for this file.
 
 Once you're done with working on the files, run \`npm run build\` to compile the entire directory to static HTML Files.
 
@@ -55,13 +61,14 @@ Run \`npm run start\` to serve the built output.`,
 	{
 		name: "templates/index.html",
 		requiresFolder: "templates",
-		content: ({ appName }) => `<html>
+		content: `<html>
 	<head>
-		<title>${appName}</title>
+		<title>{{ title }}</title>
 	</head>
 	<body>
 		<!-- This serves as a template for your file, 
-			add stylesheets, scripts or any other properties that you need common in your pages. 
+			add stylesheets, 
+			scripts or any other properties that you need common in your pages.
 		-->
 		{{ content }}
 	</body>
