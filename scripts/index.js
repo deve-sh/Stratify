@@ -2,7 +2,10 @@
 
 const commandType = process.argv[2];
 
-if (!commandType) return "";
+if (!commandType)
+	return console.log(
+		"Use stratify dev/build/start for the appropriate action."
+	);
 
 if (commandType === "dev") {
 	// Start the dev server, with live reloading for changes in the 'pages' directory.
