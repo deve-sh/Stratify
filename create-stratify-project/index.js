@@ -30,7 +30,7 @@ const packageJSONContent = (appName = "") => `{
 const filesToGenerate = [
 	{
 		name: ".gitignore",
-		content: "node_modules\n.env\nbuild\n",
+		content: "node_modules\n.env\nbuild\n.live\n",
 	},
 	{
 		name: "package.json",
