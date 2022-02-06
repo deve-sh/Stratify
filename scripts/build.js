@@ -1,4 +1,8 @@
-function buildPages(buildPath = "./build", silent = false) {
+function buildPages(
+	buildPath = "./build",
+	silent = false,
+	exitPostBuild = true
+) {
 	const readPagesDirectory = require("../helpers/readPagesDirectory");
 
 	const markdownFiles = readPagesDirectory();
@@ -27,7 +31,7 @@ function buildPages(buildPath = "./build", silent = false) {
 	}
 
 	if (!silent) console.log("Build successful");
-	return process.exit(0); // Done building without any issues
+	if (exitPostBuild) return process.exit(0); // Done building without any issues
 }
 
 module.exports = buildPages;
