@@ -9,6 +9,8 @@ if (!commandType)
 
 if (commandType === "dev") {
 	// Start the dev server, with live reloading for changes in the 'pages' directory.
+	const dev = require("./dev");
+	dev();
 } else if (commandType === "build") {
 	// Build the pages directory and generate a 'build' folder.
 	const build = require("./build");

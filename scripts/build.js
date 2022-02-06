@@ -1,4 +1,4 @@
-function buildPages(buildPath = "./build") {
+function buildPages(buildPath = "./build", silent = false) {
 	const readPagesDirectory = require("../helpers/readPagesDirectory");
 
 	const markdownFiles = readPagesDirectory();
@@ -17,8 +17,8 @@ function buildPages(buildPath = "./build") {
 		const buildPage = require("../helpers/buildPage");
 		for (let file of markdownFiles) buildPage(file, buildFolder);
 
-		console.log("Finished Building Pages");
-		console.log("Moving static assets to build directory");
+		if (!silent) console.log("Finished Building Pages");
+		if (!silent) console.log("Moving static assets to build directory");
 		if (dirExists(publicFolder)) {
 			// For all static assets
 			const copyAllFolderContents = require("../helpers/copyAllFolderContents");
@@ -26,7 +26,7 @@ function buildPages(buildPath = "./build") {
 		}
 	}
 
-	console.log("Build successful");
+	if (!silent) console.log("Build successful");
 	return process.exit(0); // Done building without any issues
 }
 
