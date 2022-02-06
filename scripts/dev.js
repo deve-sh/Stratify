@@ -4,6 +4,8 @@ function setupDevServer() {
 	console.log("Starting up dev server");
 	const liveServer = require("live-server");
 
+	const port = parseInt(process.argv[3]) || 8181;
+
 	// Setup initial build in .live folder
 	const buildPages = require("./build");
 	buildPages("./.live", true, false);
@@ -59,7 +61,7 @@ function setupDevServer() {
 		"Starting up Live Server, just make changes to your pages and reload your browser window if you don't immediately see them"
 	);
 	const liveServerParams = {
-		port: 8181,
+		port,
 		host: "0.0.0.0",
 		root: path.resolve(process.cwd(), "./.live"),
 		open: true,
