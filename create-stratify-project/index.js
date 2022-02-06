@@ -61,9 +61,11 @@ Run \`npm run start\` to serve the built output.`,
 	{
 		name: "templates/index.html",
 		requiresFolder: "templates",
-		content: `<html>
+		content: `<html lang="en">
 	<head>
 		<title>{{ title }}</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
 		<!-- This serves as a template for your file, 
