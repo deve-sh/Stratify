@@ -20,7 +20,7 @@ const packageJSONContent = (appName = "") => `{
 	  "start": "stratify start"
 	},
 	"dependencies": {
-		"stratify-web": "^1.0.0"
+		"stratify-web": "^1.1.0"
 	},
 	"keywords": [],
 	"author": "",
