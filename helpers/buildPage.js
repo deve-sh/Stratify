@@ -1,4 +1,4 @@
-const buildPage = ({ fileName, directory }, buildFolder) => {
+const buildPage = async ({ fileName, directory }, buildFolder) => {
 	const path = require("path");
 	const fs = require("fs");
 	const parseMarkdown = require("./parseMarkdown");

@@ -1,4 +1,4 @@
-function buildPages(
+async function buildPages(
 	buildPath = "./build",
 	silent = false,
 	exitPostBuild = true
@@ -19,7 +19,11 @@ function buildPages(
 
 	if (markdownFiles.length) {
 		const buildPage = require("../helpers/buildPage");
-		for (let file of markdownFiles) buildPage(file, buildFolder);
+		const pageBuilds = [];
+		for (let file of markdownFiles)
+			pageBuilds.push(buildPage(file, buildFolder));
+
+		await Promise.all(pageBuilds);
 
 		if (!silent) console.log("Finished Building Pages");
 		if (!silent) console.log("Moving static assets to build directory");

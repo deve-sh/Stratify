@@ -1,6 +1,6 @@
 const buildPage = require("../helpers/buildPage");
 
-function setupDevServer() {
+async function setupDevServer() {
 	console.log("Starting up dev server");
 	const liveServer = require("live-server");
 
@@ -8,7 +8,7 @@ function setupDevServer() {
 
 	// Setup initial build in .live folder
 	const buildPages = require("./build");
-	buildPages("./.live", true, false);
+	await buildPages("./.live", true, false);
 
 	// Initial build done.
 	// Setup a change listener for listening to user's changes in the pages directory.
