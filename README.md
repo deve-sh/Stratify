@@ -8,6 +8,10 @@ A simple tool to build out a static website using nothing but Markdown. Useful f
 npm i -g stratify-web
 ```
 
+### Min Requirements
+
+NodeJS > `14.0.0`
+
 ### Create a New Project
 
 ```bash
