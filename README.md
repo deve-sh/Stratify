@@ -2,6 +2,10 @@
 
 A simple tool to build out a static website using nothing but Markdown. Useful for static blog sites and feeds.
 
+### Read the writeup
+
+You can read a documented process of building this tool [here](https://blog.devesh.tech/post/building-a-static-site-generator).
+
 ### Get Started
 
 ```
@@ -102,4 +106,4 @@ stratify dev
 
 [Create a Pull Request](https://github.com/deve-sh/stratify/compare)
 
-Contributions and feedback is welcome, this is a weekend project built out of curiousity, any good changes will be merged.
+Contributions and feedback are welcome, this is a weekend project built out of curiousity, any good changes will be merged.
