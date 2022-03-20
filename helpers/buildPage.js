@@ -18,15 +18,17 @@ const buildPage = async ({ fileName, directory }, buildFolder) => {
 
 	// Check if there is any template present for this page.
 	const template = getPageTemplate(pageName);
+	let outputHTML = convertedHTML;
 	if (template)
-		fs.writeFileSync(
-			`${buildFolder}/${pageName}.html`,
-			// Replace the  {{ content }} block with the converted markdown HTML
-			template
-				.replace("{{ content }}", convertedHTML)
-				.replace("{{ title }}", title)
-		);
-	else fs.writeFileSync(`${buildFolder}/${pageName}.html`, convertedHTML);
+		// Replace the  {{ content }} block with the converted markdown HTML
+		outputHTML = template
+			.replace("{{ content }}", outputHTML)
+			.replace("{{ title }}", title);
+	// Minifying HTML output
+	const htmlMinifier = require("html-minifier").minify;
+	outputHTML = htmlMinifier(outputHTML);
+
+	fs.writeFileSync(`${buildFolder}/${pageName}.html`, outputHTML);
 };
 
 module.exports = buildPage;
