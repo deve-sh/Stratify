@@ -1,5 +1,9 @@
 # Stratify
 
+<p align="center">
+    <img src="logo.png" />
+</p>
+
 A simple tool to build out a static website using nothing but Markdown. Useful for static blog sites and feeds.
 
 ### Read the writeup
