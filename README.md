@@ -1,7 +1,7 @@
 # Stratify
 
 <p align="center">
-    <img src="logo.png" />
+    <img src="https://firebasestorage.googleapis.com/v0/b/devesh-blog-3fbfc.appspot.com/o/postimages%2Fbuilding-a-static-site-generator%2Fprimaryimage.jpg?alt=media&token=af97b450-71ec-4380-a931-dd17b4c5374b" />
 </p>
 
 A simple tool to build out a static website using nothing but Markdown. Useful for static blog sites and feeds.
