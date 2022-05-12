@@ -1,6 +1,7 @@
 const buildPage = async ({ fileName, directory }, buildFolder) => {
 	const path = require("path");
 	const fs = require("fs");
+	// Read environment variables again and again so each time a page content changes, environment variables stay up to date.
 	const { config } = require("dotenv");
 	const environmentVariables = config();
 
