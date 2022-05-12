@@ -78,6 +78,31 @@ An example of a template is:
 
 Put your static assets like images, videos and other files in the `public` folder. They are automatically moved to the build output and are available in the same directory as the finally built pages.
 
+### Environment Variables
+
+Although a markdown based file should not have environment variables, you can use environment variables in templates.
+
+Make sure to start your environment variables with `STRATIFY_APP_` and save them in `.env` file.
+
+```html
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<!-- Add your desired stylesheets here -->
+	</head>
+	<body>
+		<!-- This serves as a template for your file, 
+			add stylesheets, 
+			scripts or any other properties that you need common in your pages.
+		-->
+		{{ content }}
+	</body>
+	<script type="text/javascript">
+		const variable = process.env.STRATIFY_APP_ENV_VARIABLE;
+	</script>
+</html>
+```
+
 ### Building your project
 
 ```bash
