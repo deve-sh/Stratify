@@ -1,6 +1,9 @@
 const buildPage = async ({ fileName, directory }, buildFolder) => {
 	const path = require("path");
 	const fs = require("fs");
+	const { config } = require("dotenv");
+	const environmentVariables = config();
+
 	const parseMarkdown = require("./parseMarkdown");
 	const getPageTemplate = require("./getPageTemplate");
 
@@ -17,7 +20,7 @@ const buildPage = async ({ fileName, directory }, buildFolder) => {
 		fs.mkdirSync(`${buildFolder}${directory}`, { recursive: true });
 
 	// Check if there is any template present for this page.
-	const template = getPageTemplate(pageName);
+	const template = getPageTemplate(pageName, environmentVariables.parsed);
 	let outputHTML = convertedHTML;
 	if (template)
 		// Replace the  {{ content }} block with the converted markdown HTML
