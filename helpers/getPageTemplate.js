@@ -28,7 +28,7 @@ const getPageTemplate = (pageName, environmentVariables = {}) => {
 				);
 				pageTemplateContent = pageTemplateContent.replace(
 					variableNameRegex,
-					environmentVariables[variableName]
+					`"${environmentVariables[variableName]}"`
 				);
 			}
 		}
