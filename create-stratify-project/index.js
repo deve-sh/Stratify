@@ -12,7 +12,7 @@ const packageJSONContent = (appName = "") => `{
 	"name": "${appName.replace(/\s/g, "_").toLowerCase()}",
 	"version": "1.0.0",
 	"description": "A simple tool to build out a static website using nothing but Markdown.",
-	"main": "index.js",
+	"main": "",
 	"scripts": {
 	  "test": "echo \\"Error: no test specified\\" && exit 1",
 	  "dev": "stratify dev",
