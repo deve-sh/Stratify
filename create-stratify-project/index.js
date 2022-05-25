@@ -117,7 +117,7 @@ function generateStratifyProject() {
 	execSync("git init");
 	// Come back to the main folder
 	execSync("cd ../");
-	console.log("Successfully generated startify project.");
+	console.log("Successfully generated stratify project.");
 }
 
 generateStratifyProject();
